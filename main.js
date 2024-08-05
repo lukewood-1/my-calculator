@@ -21,13 +21,17 @@ function divide(a, b){a
 function operate(num1, operator, num2){
 	switch (operator){
 		case '+':
-			return input.value = add(num1, num2);
+			if(!Number.isInteger(add(num1, num2))) return input.value = parseFloat(add(num1, num2)).toFixed(2)
+			else return input.value = add(num1, num2);
 		case '-':
-			return input.value = subtract(num1, num2);
+			if(!Number.isInteger(subtract(num1, num2))) return input.value = parseFloat(subtract(num1, num2)).toFixed(2)
+			else return input.value = subtract(num1, num2);
 		case '*':
-			return input.value = multiply(num1, num2);
+			if(!Number.isInteger(multiply(num1, num2))) return input.value = parseFloat(multiply(num1, num2)).toFixed(2)
+			else return input.value = multiply(num1, num2);
 		case '/':
-			return input.value = divide(num1, num2);
+			if(!Number.isInteger(divide(num1, num2))) return input.value = parseFloat(divide(num1, num2)).toFixed(2)
+			else return input.value = divide(num1, num2);
 		default:
 			alert("This calculator needs two numbers and an aritmethic operator to work, just like in school math.");
 	}
